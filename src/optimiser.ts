@@ -1,7 +1,7 @@
 import { calculateStatusCredits } from './calculator.js';
 import { getEarningTable, isValidDirectLeg } from './earning-tables.js';
 import { resolveWithAliases } from './airports.js';
-import { getAliases } from './regions.js';
+import { getAliases, resolveRegion } from './regions.js';
 import { CalculationError, type CabinClass, type OptimiserResult, type OptimiserOption } from './types.js';
 
 /**
@@ -59,6 +59,20 @@ export function optimiseRouting(
       // Skip if origin equals destination
       if (orig === dest) continue;
 
+      // Region of the origin — used below to prevent backtracking (hubs in the
+      // same region as the origin would just bring the routing home again).
+      const origRegion = resolveRegion(orig);
+
+      // Returns true if a hub is an acceptable intermediate stop.
+      // A hub must not be in the same Qantas region as the origin — that would
+      // create a backtracking itinerary (e.g. SYD→LAX→BNE→LHR is absurd).
+      // If the origin or hub has no region, we can't determine this, so we allow it.
+      const isNonBacktrackingHub = (hub: string): boolean => {
+        if (!origRegion) return true;
+        const hubRegion = resolveRegion(hub);
+        return !hubRegion || hubRegion !== origRegion;
+      };
+
       // Direct (0 stops) — only if the airline actually flies this city pair
       if (isValidDirectLeg(orig, dest, earningTable)) {
         candidates.push([orig, dest]);
@@ -67,7 +81,7 @@ export function optimiseRouting(
       if (clampedMaxStops >= 1) {
         // 1 stop via each hub — all three legs must be valid direct segments
         for (const hub1 of hubs) {
-          if (hub1 !== orig && hub1 !== dest) {
+          if (hub1 !== orig && hub1 !== dest && isNonBacktrackingHub(hub1)) {
             if (
               isValidDirectLeg(orig, hub1, earningTable) &&
               isValidDirectLeg(hub1, dest, earningTable)
@@ -87,7 +101,9 @@ export function optimiseRouting(
               hub1 !== orig &&
               hub1 !== dest &&
               hub2 !== orig &&
-              hub2 !== dest
+              hub2 !== dest &&
+              isNonBacktrackingHub(hub1) &&
+              isNonBacktrackingHub(hub2)
             ) {
               if (
                 isValidDirectLeg(orig, hub1, earningTable) &&
@@ -112,7 +128,10 @@ export function optimiseRouting(
                 hub2 !== hub3 &&
                 hub1 !== orig && hub1 !== dest &&
                 hub2 !== orig && hub2 !== dest &&
-                hub3 !== orig && hub3 !== dest
+                hub3 !== orig && hub3 !== dest &&
+                isNonBacktrackingHub(hub1) &&
+                isNonBacktrackingHub(hub2) &&
+                isNonBacktrackingHub(hub3)
               ) {
                 if (
                   isValidDirectLeg(orig, hub1, earningTable) &&
