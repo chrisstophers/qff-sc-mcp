@@ -14,7 +14,9 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "typecheck:api": "tsc --noEmit -p api/tsconfig.json",
-    "typecheck:all": "npm run typecheck && npm run typecheck:api"
+    "typecheck:all": "npm run typecheck && npm run typecheck:api",
+    "scrape": "tsx tests/qa/scraper.ts",
+    "scrape:dry": "tsx tests/qa/scraper.ts --dry-run"
   },
   "keywords": [
     "qantas",
@@ -27,6 +29,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "playwright": "^1.58.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.7.0",
     "vitest": "^2.1.0"
   },

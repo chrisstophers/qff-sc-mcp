@@ -1,0 +1,643 @@
+{
+  "airline": "QF",
+  "name": "Qantas",
+  "data_version": "2025.07",
+  "last_verified": "2026-02-28",
+  "source_url": "https://www.qantas.com/us/en/frequent-flyer/earn-points/airline-earning-tables/qantas-and-jetstar-earning-tables.html",
+  "notes": [
+    "QF booking classes have multiple sub-tiers per cabin (e.g. Flexible Business J/C, Business D, Discount Business I). All map to 'business' in this table — actual earning may differ by sub-tier.",
+    "Our 'business' category maps to Qantas calculator's 'Discount Business' tier. The calculator also shows a higher 'Business' tier (~5 more SCs) which we do not model separately.",
+    "Our 'flexible_economy' maps to the Qantas calculator's 'Flexible Economy' tier, which earns at 50% of the Discount Business rate for all verified routes.",
+    "Our 'premium_economy' maps to the Qantas calculator's 'Premium Economy' tier (not 'Discount Premium Economy').",
+    "QF does not fly SYD→DOH. Doha is Qatar Airways territory; the aus_east_coast_middle_east table applies only to Dubai (DXB) and other Middle East destinations actually served by QF.",
+    "QF does not fly non-stop Australia→East Coast USA as of 2026. Project Sunrise (SYD→LHR/JFK non-stop) is planned but not yet in service.",
+    "Domestic Australian destinations (ADL, CNS, DRW) do not have explicit route tables — they fall to distance_tables. Perth (PER) earns at a specific lower rate and has an explicit table."
+  ],
+  "hub_airports": ["SYD", "MEL", "BNE", "PER", "SIN", "LHR", "LAX", "HKG", "NRT", "DXB", "AKL"],
+  "earn_category_mapping": {
+    "A": "first",
+    "F": "first",
+    "J": "business",
+    "C": "business",
+    "D": "business",
+    "I": "business",
+    "W": "premium_economy",
+    "R": "premium_economy",
+    "T": "economy",
+    "Y": "flexible_economy",
+    "B": "flexible_economy",
+    "H": "flexible_economy",
+    "G": "economy",
+    "K": "economy",
+    "L": "economy",
+    "M": "economy",
+    "S": "economy",
+    "V": "economy",
+    "E": "discount_economy",
+    "N": "discount_economy",
+    "O": "discount_economy",
+    "Q": "discount_economy"
+  },
+  "route_tables": [
+    {
+      "id": "aus_east_coast_new_zealand",
+      "origin_region": "australia_east_coast",
+      "destination_region": "new_zealand",
+      "bidirectional": true,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 20,
+        "economy": 25,
+        "flexible_economy": 40,
+        "premium_economy": 45,
+        "business": 80,
+        "first": 120
+      },
+      "qantas_points": {
+        "discount_economy": 500,
+        "economy": 700,
+        "flexible_economy": 700,
+        "premium_economy": 1125,
+        "business": 2000,
+        "first": 3000
+      }
+    },
+    {
+      "id": "aus_east_coast_singapore",
+      "origin_region": "australia_east_coast",
+      "destination_region": "singapore",
+      "bidirectional": true,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 65,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1625,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "aus_east_coast_southeast_asia",
+      "origin_region": "australia_east_coast",
+      "destination_region": "southeast_asia",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["Qantas groups Northeast and Southeast Asia in one earning bucket (J=120)"],
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 65,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1625,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "aus_east_coast_hong_kong",
+      "origin_region": "australia_east_coast",
+      "destination_region": "hong_kong",
+      "bidirectional": true,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 65,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1625,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "aus_east_coast_japan",
+      "origin_region": "australia_east_coast",
+      "destination_region": "japan",
+      "bidirectional": true,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 65,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1625,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "aus_east_coast_china",
+      "origin_region": "australia_east_coast",
+      "destination_region": "china",
+      "bidirectional": true,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 65,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1625,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "aus_east_coast_india_sri_lanka",
+      "origin_region": "australia_east_coast",
+      "destination_region": "india_sri_lanka",
+      "bidirectional": true,
+      "verified": false,
+      "todo": "Qantas groups India with broader Asia — verify exact rate against calculator",
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 65,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1625,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "aus_east_coast_west_coast_usa",
+      "origin_region": "australia_east_coast",
+      "destination_region": "west_coast_usa_canada",
+      "bidirectional": true,
+      "verified": true,
+      "gateway_airports": {
+        "australia_east_coast": ["SYD", "MEL", "BNE"],
+        "west_coast_usa_canada": ["LAX"]
+      },
+      "status_credits": {
+        "discount_economy": 45,
+        "economy": 60,
+        "flexible_economy": 90,
+        "premium_economy": 100,
+        "business": 180,
+        "first": 270
+      },
+      "qantas_points": {
+        "discount_economy": 1125,
+        "economy": 1500,
+        "flexible_economy": 1500,
+        "premium_economy": 2500,
+        "business": 4500,
+        "first": 6750
+      }
+    },
+    {
+      "id": "aus_east_coast_east_coast_usa",
+      "origin_region": "australia_east_coast",
+      "destination_region": "east_coast_usa_canada",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["QF has no non-stop Australia→East Coast USA service as of 2026. Passengers connect via LAX. Gateway constraint blocks direct optimiser candidates."],
+      "gateway_airports": {
+        "australia_east_coast": ["SYD", "MEL", "BNE"],
+        "east_coast_usa_canada": []
+      },
+      "status_credits": {
+        "discount_economy": 70,
+        "economy": 95,
+        "flexible_economy": 140,
+        "premium_economy": 150,
+        "business": 280,
+        "first": 420
+      },
+      "qantas_points": {
+        "discount_economy": 1750,
+        "economy": 2375,
+        "flexible_economy": 2375,
+        "premium_economy": 3750,
+        "business": 7000,
+        "first": 10500
+      }
+    },
+    {
+      "id": "aus_east_coast_western_europe",
+      "origin_region": "australia_east_coast",
+      "destination_region": "western_europe",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["QF operates SYD/MEL→LHR via Singapore (QF1/2) or via Dubai (QF9/10 via Emirates). No non-stop service yet."],
+      "status_credits": {
+        "discount_economy": 70,
+        "economy": 95,
+        "flexible_economy": 140,
+        "premium_economy": 150,
+        "business": 280,
+        "first": 420
+      },
+      "qantas_points": {
+        "discount_economy": 1750,
+        "economy": 2375,
+        "flexible_economy": 2375,
+        "premium_economy": 3750,
+        "business": 7000,
+        "first": 10500
+      }
+    },
+    {
+      "id": "aus_east_coast_northern_europe",
+      "origin_region": "australia_east_coast",
+      "destination_region": "northern_europe",
+      "bidirectional": true,
+      "verified": false,
+      "todo": "Qantas bundles all Europe together — verify if Northern Europe earns the same 280 SC for Business as Western Europe",
+      "status_credits": {
+        "discount_economy": 70,
+        "economy": 95,
+        "flexible_economy": 140,
+        "premium_economy": 150,
+        "business": 280,
+        "first": 420
+      },
+      "qantas_points": {
+        "discount_economy": 1750,
+        "economy": 2375,
+        "flexible_economy": 2375,
+        "premium_economy": 3750,
+        "business": 7000,
+        "first": 10500
+      }
+    },
+    {
+      "id": "aus_east_coast_southeast_europe",
+      "origin_region": "australia_east_coast",
+      "destination_region": "southeast_europe",
+      "bidirectional": true,
+      "verified": false,
+      "todo": "Verify Eastern Europe earns same rate as Western Europe",
+      "status_credits": {
+        "discount_economy": 70,
+        "economy": 95,
+        "flexible_economy": 140,
+        "premium_economy": 150,
+        "business": 280,
+        "first": 420
+      },
+      "qantas_points": {
+        "discount_economy": 1750,
+        "economy": 2375,
+        "flexible_economy": 2375,
+        "premium_economy": 3750,
+        "business": 7000,
+        "first": 10500
+      }
+    },
+    {
+      "id": "aus_east_coast_middle_east",
+      "origin_region": "australia_east_coast",
+      "destination_region": "middle_east",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["Verified via MEL→DXB on the Qantas calculator. QF does not fly to DOH — that is Qatar Airways territory."],
+      "status_credits": {
+        "discount_economy": 45,
+        "economy": 60,
+        "flexible_economy": 90,
+        "premium_economy": 100,
+        "business": 180,
+        "first": 270
+      },
+      "qantas_points": {
+        "discount_economy": 1125,
+        "economy": 1500,
+        "flexible_economy": 1500,
+        "premium_economy": 2500,
+        "business": 4500,
+        "first": 6750
+      }
+    },
+    {
+      "id": "aus_east_coast_dallas",
+      "origin_region": "australia_east_coast",
+      "destination_region": "dallas",
+      "bidirectional": true,
+      "verified": false,
+      "todo": "Estimated from published Premium Economy rate (105 SC). Verify against Qantas calculator — QF may not operate direct SYD→DFW",
+      "gateway_airports": {
+        "australia_east_coast": ["SYD"],
+        "dallas": ["DFW"]
+      },
+      "status_credits": {
+        "discount_economy": 45,
+        "economy": 65,
+        "flexible_economy": 100,
+        "premium_economy": 105,
+        "business": 200,
+        "first": 300
+      },
+      "qantas_points": {
+        "discount_economy": 1125,
+        "economy": 1625,
+        "flexible_economy": 1625,
+        "premium_economy": 2625,
+        "business": 5000,
+        "first": 7500
+      }
+    },
+    {
+      "id": "aus_east_coast_perth",
+      "origin_region": "australia_east_coast",
+      "destination_region": "perth",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["Domestic route — based on QF domestic distance band 1501+ miles. No Premium Economy or First cabin on QF domestic metal."],
+      "status_credits": {
+        "discount_economy": 20,
+        "economy": 20,
+        "flexible_economy": 20,
+        "premium_economy": 20,
+        "business": 40,
+        "first": 40
+      },
+      "qantas_points": {
+        "discount_economy": 500,
+        "economy": 500,
+        "flexible_economy": 500,
+        "premium_economy": 500,
+        "business": 1000,
+        "first": 1000
+      }
+    },
+    {
+      "id": "perth_southeast_asia",
+      "origin_region": "perth",
+      "destination_region": "southeast_asia",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["Darwin/Perth ↔ Southeast Asia from Qantas earning tables"],
+      "status_credits": {
+        "discount_economy": 25,
+        "economy": 25,
+        "flexible_economy": 50,
+        "premium_economy": 55,
+        "business": 100,
+        "first": 150
+      },
+      "qantas_points": {
+        "discount_economy": 625,
+        "economy": 625,
+        "flexible_economy": 625,
+        "premium_economy": 1375,
+        "business": 2500,
+        "first": 3750
+      }
+    },
+    {
+      "id": "perth_singapore",
+      "origin_region": "perth",
+      "destination_region": "singapore",
+      "bidirectional": true,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 25,
+        "economy": 25,
+        "flexible_economy": 50,
+        "premium_economy": 55,
+        "business": 100,
+        "first": 150
+      },
+      "qantas_points": {
+        "discount_economy": 625,
+        "economy": 625,
+        "flexible_economy": 625,
+        "premium_economy": 1375,
+        "business": 2500,
+        "first": 3750
+      }
+    },
+    {
+      "id": "perth_western_europe",
+      "origin_region": "perth",
+      "destination_region": "western_europe",
+      "bidirectional": true,
+      "verified": true,
+      "notes": ["Darwin/Perth ↔ Europe from Qantas earning tables"],
+      "status_credits": {
+        "discount_economy": 60,
+        "economy": 80,
+        "flexible_economy": 120,
+        "premium_economy": 130,
+        "business": 240,
+        "first": 360
+      },
+      "qantas_points": {
+        "discount_economy": 1500,
+        "economy": 2000,
+        "flexible_economy": 2000,
+        "premium_economy": 3250,
+        "business": 6000,
+        "first": 9000
+      }
+    }
+  ],
+  "distance_tables": [
+    {
+      "id": "qf_0_750",
+      "applies_to": "All QF routes not matching a specific route table (0–750 mi). Verified via SYD→ADL (domestic).",
+      "min_miles": 0,
+      "max_miles": 750,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 10,
+        "economy": 10,
+        "flexible_economy": 20,
+        "premium_economy": 20,
+        "business": 40,
+        "first": 60
+      },
+      "qantas_points": {
+        "discount_economy": 250,
+        "economy": 250,
+        "flexible_economy": 250,
+        "premium_economy": 500,
+        "business": 1000,
+        "first": 1500
+      }
+    },
+    {
+      "id": "qf_751_1500",
+      "applies_to": "All QF routes not matching a specific route table (751–1500 mi). Verified via SYD→CNS (domestic).",
+      "min_miles": 751,
+      "max_miles": 1500,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 15,
+        "economy": 15,
+        "flexible_economy": 30,
+        "premium_economy": 30,
+        "business": 60,
+        "first": 90
+      },
+      "qantas_points": {
+        "discount_economy": 375,
+        "economy": 375,
+        "flexible_economy": 375,
+        "premium_economy": 750,
+        "business": 1500,
+        "first": 2250
+      }
+    },
+    {
+      "id": "qf_1501_2500",
+      "applies_to": "All QF routes not matching a specific route table (1501–2500 mi)",
+      "min_miles": 1501,
+      "max_miles": 2500,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 20,
+        "economy": 25,
+        "flexible_economy": 40,
+        "premium_economy": 40,
+        "business": 80,
+        "first": 120
+      },
+      "qantas_points": {
+        "discount_economy": 500,
+        "economy": 625,
+        "flexible_economy": 625,
+        "premium_economy": 1000,
+        "business": 2000,
+        "first": 3000
+      }
+    },
+    {
+      "id": "qf_2501_3500",
+      "applies_to": "All QF routes not matching a specific route table (2501–3500 mi)",
+      "min_miles": 2501,
+      "max_miles": 3500,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 25,
+        "economy": 35,
+        "flexible_economy": 50,
+        "premium_economy": 50,
+        "business": 100,
+        "first": 150
+      },
+      "qantas_points": {
+        "discount_economy": 625,
+        "economy": 875,
+        "flexible_economy": 875,
+        "premium_economy": 1250,
+        "business": 2500,
+        "first": 3750
+      }
+    },
+    {
+      "id": "qf_3501_5000",
+      "applies_to": "All QF routes not matching a specific route table (3501–5000 mi)",
+      "min_miles": 3501,
+      "max_miles": 5000,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 40,
+        "flexible_economy": 60,
+        "premium_economy": 60,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1000,
+        "flexible_economy": 1000,
+        "premium_economy": 1500,
+        "business": 3000,
+        "first": 4500
+      }
+    },
+    {
+      "id": "qf_5001_6500",
+      "applies_to": "All QF routes not matching a specific route table (5001–6500 mi)",
+      "min_miles": 5001,
+      "max_miles": 6500,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 35,
+        "economy": 45,
+        "flexible_economy": 70,
+        "premium_economy": 70,
+        "business": 140,
+        "first": 210
+      },
+      "qantas_points": {
+        "discount_economy": 875,
+        "economy": 1125,
+        "flexible_economy": 1125,
+        "premium_economy": 1750,
+        "business": 3500,
+        "first": 5250
+      }
+    },
+    {
+      "id": "qf_6501_plus",
+      "applies_to": "All QF routes not matching a specific route table (6501+ mi)",
+      "min_miles": 6501,
+      "max_miles": 99999,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 40,
+        "economy": 55,
+        "flexible_economy": 80,
+        "premium_economy": 80,
+        "business": 160,
+        "first": 240
+      },
+      "qantas_points": {
+        "discount_economy": 1000,
+        "economy": 1375,
+        "flexible_economy": 1375,
+        "premium_economy": 2000,
+        "business": 4000,
+        "first": 6000
+      }
+    }
+  ]
+}

@@ -84,21 +84,24 @@
       "origin_region": "dallas",
       "destination_region": "east_coast_usa_canada",
       "bidirectional": true,
+      "verified": true,
+      "last_verified": "2026-02-28",
+      "notes": "Applies to Dallas ↔ New York/Newark/Boston per official Qantas partner earning tables. AA domestic First Class (booking classes F/P/A) earns at Business rates — callers should pass cabin_class: 'business' for AA domestic First.",
       "status_credits": {
-        "discount_economy": 15,
-        "economy": 20,
-        "flexible_economy": 30,
-        "premium_economy": 30,
+        "discount_economy": 20,
+        "economy": 25,
+        "flexible_economy": 40,
+        "premium_economy": 40,
         "business": 80,
-        "first": 80
+        "first": 120
       },
       "qantas_points": {
-        "discount_economy": 375,
-        "economy": 750,
+        "discount_economy": 500,
+        "economy": 625,
         "flexible_economy": 1500,
         "premium_economy": 1500,
         "business": 2500,
-        "first": 2500
+        "first": 3750
       }
     },
     {

@@ -1,12 +1,14 @@
 import aaTable from './data/earning-tables/american-airlines.json' with { type: 'json' };
+import qfTable from './data/earning-tables/qantas.json' with { type: 'json' };
 import type { EarningTable, RouteTable, DistanceTable } from './types.js';
 import { resolveRegion } from './regions.js';
 
 // ─── Registry ─────────────────────────────────────────────────────────────────
-// Add new airlines here as they're implemented (Phase 4+).
+// Add new airlines here as they're implemented.
 
 const registry: Record<string, EarningTable> = {
   AA: aaTable as EarningTable,
+  QF: qfTable as EarningTable,
 };
 
 // ─── Public API ───────────────────────────────────────────────────────────────
