@@ -106,6 +106,10 @@
       "origin_region": "australia_east_coast",
       "destination_region": "west_coast_usa_canada",
       "bidirectional": true,
+      "gateway_airports": {
+        "australia_east_coast": ["SYD", "MEL", "BNE", "OOL"],
+        "west_coast_usa_canada": ["LAX"]
+      },
       "status_credits": {
         "discount_economy": 45,
         "economy": 60,
@@ -128,6 +132,10 @@
       "origin_region": "australia_east_coast",
       "destination_region": "east_coast_usa_canada",
       "bidirectional": true,
+      "gateway_airports": {
+        "australia_east_coast": ["SYD", "MEL", "BNE", "OOL"],
+        "east_coast_usa_canada": []
+      },
       "status_credits": {
         "discount_economy": 70,
         "economy": 95,
@@ -150,6 +158,10 @@
       "origin_region": "australia_east_coast",
       "destination_region": "dallas",
       "bidirectional": true,
+      "gateway_airports": {
+        "australia_east_coast": ["SYD"],
+        "dallas": ["DFW"]
+      },
       "status_credits": {
         "discount_economy": 50,
         "economy": 70,

@@ -81,6 +81,23 @@ export interface RouteTable {
   qantas_points?: QantasPointsMap;
   verified?: boolean;
   todo?: string;
+  /**
+   * Optional: specifies which airports at each end of this route actually have
+   * direct service. Keyed by region name (matching origin_region / destination_region).
+   *
+   * - If this field is absent: the optimiser treats any airport-to-airport leg
+   *   between the two regions as a valid direct segment (safe default for domestic
+   *   and short-haul routes where any hub-to-hub pairing is realistic).
+   *
+   * - If this field is present: the optimiser ONLY generates direct legs between
+   *   airports that appear in their respective gateway list.
+   *   An empty list for a region means NO direct service exists for that side
+   *   (e.g. AA has no direct flights from Australia to East Coast US cities).
+   *
+   * This field does NOT affect the calculator — it still applies the earning rate
+   * to any manually-supplied leg. It only gates what the optimiser invents.
+   */
+  gateway_airports?: Record<string, string[]>;
 }
 
 /** A distance-band based earning table entry (e.g. 0–400 mi intra-USA). */

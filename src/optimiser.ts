@@ -1,5 +1,5 @@
 import { calculateStatusCredits } from './calculator.js';
-import { getEarningTable } from './earning-tables.js';
+import { getEarningTable, isValidDirectLeg } from './earning-tables.js';
 import { resolveWithAliases } from './airports.js';
 import { getAliases } from './regions.js';
 import { CalculationError, type CabinClass, type OptimiserResult, type OptimiserOption } from './types.js';
@@ -59,14 +59,21 @@ export function optimiseRouting(
       // Skip if origin equals destination
       if (orig === dest) continue;
 
-      // Direct (0 stops)
-      candidates.push([orig, dest]);
+      // Direct (0 stops) — only if the airline actually flies this city pair
+      if (isValidDirectLeg(orig, dest, earningTable)) {
+        candidates.push([orig, dest]);
+      }
 
       if (clampedMaxStops >= 1) {
-        // 1 stop via each hub
+        // 1 stop via each hub — all three legs must be valid direct segments
         for (const hub1 of hubs) {
           if (hub1 !== orig && hub1 !== dest) {
-            candidates.push([orig, hub1, dest]);
+            if (
+              isValidDirectLeg(orig, hub1, earningTable) &&
+              isValidDirectLeg(hub1, dest, earningTable)
+            ) {
+              candidates.push([orig, hub1, dest]);
+            }
           }
         }
       }
@@ -82,7 +89,13 @@ export function optimiseRouting(
               hub2 !== orig &&
               hub2 !== dest
             ) {
-              candidates.push([orig, hub1, hub2, dest]);
+              if (
+                isValidDirectLeg(orig, hub1, earningTable) &&
+                isValidDirectLeg(hub1, hub2, earningTable) &&
+                isValidDirectLeg(hub2, dest, earningTable)
+              ) {
+                candidates.push([orig, hub1, hub2, dest]);
+              }
             }
           }
         }
@@ -101,7 +114,14 @@ export function optimiseRouting(
                 hub2 !== orig && hub2 !== dest &&
                 hub3 !== orig && hub3 !== dest
               ) {
-                candidates.push([orig, hub1, hub2, hub3, dest]);
+                if (
+                  isValidDirectLeg(orig, hub1, earningTable) &&
+                  isValidDirectLeg(hub1, hub2, earningTable) &&
+                  isValidDirectLeg(hub2, hub3, earningTable) &&
+                  isValidDirectLeg(hub3, dest, earningTable)
+                ) {
+                  candidates.push([orig, hub1, hub2, hub3, dest]);
+                }
               }
             }
           }

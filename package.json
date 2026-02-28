@@ -12,7 +12,9 @@
     "start": "node dist/index.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typecheck:api": "tsc --noEmit -p api/tsconfig.json",
+    "typecheck:all": "npm run typecheck && npm run typecheck:api"
   },
   "keywords": [
     "qantas",
