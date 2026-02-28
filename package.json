@@ -1,0 +1,30 @@
+{
+  "name": "qff-sc-mcp",
+  "version": "0.1.0",
+  "description": "Qantas Frequent Flyer Status Credit calculator MCP server for oneworld alliance flights",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "qff-sc-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "qantas",
+    "frequent-flyer",
+    "status-credits",
+    "mcp",
+    "oneworld"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "airline": "AA",
+  "name": "American Airlines",
+  "data_version": "2019.10",
+  "last_verified": "2026-02-28",
+  "source_url": "https://www.qantas.com/au/en/frequent-flyer/earn-points/airline-earning-tables/partner-airline-earning-tables.html",
+  "notes": [
+    "AA domestic First Class earns at Business rates in QFF — AA doesn't have true First on domestic routes, their First is equivalent to domestic Business",
+    "Flights operated by American Eagle/Envoy Air earn provided they have an AA flight number on the ticket",
+    "Applies to AA-marketed flights (AA flight number) only, not codeshares marketed by other carriers"
+  ],
+  "hub_airports": ["DFW", "ORD", "CLT", "MIA", "PHX", "PHL", "DCA", "JFK", "LAX"],
+  "earn_category_mapping": {
+    "R": "business",
+    "I": "business",
+    "D": "business",
+    "C": "business",
+    "J": "business",
+    "P": "first",
+    "F": "first",
+    "A": "first",
+    "Y": "economy",
+    "B": "economy",
+    "H": "flexible_economy",
+    "K": "economy",
+    "M": "economy",
+    "L": "discount_economy",
+    "V": "discount_economy",
+    "G": "discount_economy",
+    "S": "discount_economy",
+    "N": "discount_economy",
+    "Q": "discount_economy",
+    "O": "discount_economy",
+    "W": "premium_economy",
+    "E": "premium_economy"
+  },
+  "route_tables": [
+    {
+      "id": "east_west_coast",
+      "origin_region": "east_coast_usa_canada",
+      "destination_region": "west_coast_usa_canada",
+      "bidirectional": true,
+      "status_credits": {
+        "discount_economy": 25,
+        "economy": 35,
+        "flexible_economy": 50,
+        "premium_economy": 50,
+        "business": 100,
+        "first": 150
+      },
+      "qantas_points": {
+        "discount_economy": 625,
+        "economy": 1250,
+        "flexible_economy": 2500,
+        "premium_economy": 2750,
+        "business": 3125,
+        "first": 3750
+      }
+    },
+    {
+      "id": "dallas_west_coast",
+      "origin_region": "dallas",
+      "destination_region": "west_coast_usa_canada",
+      "bidirectional": true,
+      "status_credits": {
+        "discount_economy": 25,
+        "economy": 35,
+        "flexible_economy": 50,
+        "premium_economy": 50,
+        "business": 100,
+        "first": 150
+      },
+      "qantas_points": {
+        "discount_economy": 625,
+        "economy": 1250,
+        "flexible_economy": 2500,
+        "premium_economy": 2750,
+        "business": 3125,
+        "first": 3750
+      }
+    },
+    {
+      "id": "dallas_east_coast",
+      "origin_region": "dallas",
+      "destination_region": "east_coast_usa_canada",
+      "bidirectional": true,
+      "status_credits": {
+        "discount_economy": 15,
+        "economy": 20,
+        "flexible_economy": 30,
+        "premium_economy": 30,
+        "business": 80,
+        "first": 80
+      },
+      "qantas_points": {
+        "discount_economy": 375,
+        "economy": 750,
+        "flexible_economy": 1500,
+        "premium_economy": 1500,
+        "business": 2500,
+        "first": 2500
+      }
+    },
+    {
+      "id": "aus_east_coast_west_coast_usa",
+      "origin_region": "australia_east_coast",
+      "destination_region": "west_coast_usa_canada",
+      "bidirectional": true,
+      "status_credits": {
+        "discount_economy": 45,
+        "economy": 60,
+        "flexible_economy": 90,
+        "premium_economy": 90,
+        "business": 180,
+        "first": 270
+      },
+      "qantas_points": {
+        "discount_economy": 1125,
+        "economy": 2250,
+        "flexible_economy": 4500,
+        "premium_economy": 4950,
+        "business": 5625,
+        "first": 6750
+      }
+    },
+    {
+      "id": "aus_east_coast_east_coast_usa",
+      "origin_region": "australia_east_coast",
+      "destination_region": "east_coast_usa_canada",
+      "bidirectional": true,
+      "status_credits": {
+        "discount_economy": 70,
+        "economy": 95,
+        "flexible_economy": 140,
+        "premium_economy": 140,
+        "business": 280,
+        "first": 420
+      },
+      "qantas_points": {
+        "discount_economy": 1750,
+        "economy": 3500,
+        "flexible_economy": 7000,
+        "premium_economy": 7700,
+        "business": 8750,
+        "first": 10500
+      }
+    },
+    {
+      "id": "aus_east_coast_dallas",
+      "origin_region": "australia_east_coast",
+      "destination_region": "dallas",
+      "bidirectional": true,
+      "status_credits": {
+        "discount_economy": 50,
+        "economy": 70,
+        "flexible_economy": 100,
+        "premium_economy": 100,
+        "business": 200,
+        "first": 300
+      },
+      "qantas_points": {
+        "discount_economy": 1250,
+        "economy": 2500,
+        "flexible_economy": 5000,
+        "premium_economy": 5500,
+        "business": 6250,
+        "first": 7500
+      }
+    }
+  ],
+  "distance_tables": [
+    {
+      "id": "intra_usa_short_0_400",
+      "applies_to": "Intra-USA/Canada short haul flights (0–400 mi)",
+      "min_miles": 0,
+      "max_miles": 400,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 10,
+        "economy": 10,
+        "flexible_economy": 20,
+        "premium_economy": 20,
+        "business": 40,
+        "first": 60
+      },
+      "qantas_points": {
+        "discount_economy": 250,
+        "economy": 500,
+        "flexible_economy": 1000,
+        "premium_economy": 1100,
+        "business": 1250,
+        "first": 1500
+      }
+    },
+    {
+      "id": "intra_usa_short_401_750",
+      "applies_to": "Intra-USA/Canada short haul flights (401–750 mi)",
+      "min_miles": 401,
+      "max_miles": 750,
+      "verified": true,
+      "status_credits": {
+        "discount_economy": 10,
+        "economy": 10,
+        "flexible_economy": 20,
+        "premium_economy": 20,
+        "business": 40,
+        "first": 60
+      },
+      "qantas_points": {
+        "discount_economy": 250,
+        "economy": 500,
+        "flexible_economy": 1000,
+        "premium_economy": 1100,
+        "business": 1250,
+        "first": 1500
+      }
+    },
+    {
+      "id": "all_other_751_1500",
+      "applies_to": "All other flights not matching a specific route table (751–1500 mi)",
+      "min_miles": 751,
+      "max_miles": 1500,
+      "verified": false,
+      "todo": "Verify these values against Qantas calculator — extracted from general pattern, may not be exact",
+      "status_credits": {
+        "discount_economy": 15,
+        "economy": 20,
+        "flexible_economy": 30,
+        "premium_economy": 30,
+        "business": 60,
+        "first": 90
+      },
+      "qantas_points": {
+        "discount_economy": 375,
+        "economy": 750,
+        "flexible_economy": 1500,
+        "premium_economy": 1650,
+        "business": 1875,
+        "first": 2250
+      }
+    },
+    {
+      "id": "all_other_1501_2500",
+      "applies_to": "All other flights not matching a specific route table (1501–2500 mi)",
+      "min_miles": 1501,
+      "max_miles": 2500,
+      "verified": false,
+      "todo": "Verify these values against Qantas calculator",
+      "status_credits": {
+        "discount_economy": 20,
+        "economy": 25,
+        "flexible_economy": 40,
+        "premium_economy": 40,
+        "business": 80,
+        "first": 120
+      },
+      "qantas_points": {
+        "discount_economy": 500,
+        "economy": 1000,
+        "flexible_economy": 2000,
+        "premium_economy": 2200,
+        "business": 2500,
+        "first": 3000
+      }
+    },
+    {
+      "id": "all_other_2501_5000",
+      "applies_to": "All other flights not matching a specific route table (2501–5000 mi)",
+      "min_miles": 2501,
+      "max_miles": 5000,
+      "verified": false,
+      "todo": "Verify these values against Qantas calculator",
+      "status_credits": {
+        "discount_economy": 25,
+        "economy": 30,
+        "flexible_economy": 50,
+        "premium_economy": 50,
+        "business": 100,
+        "first": 150
+      },
+      "qantas_points": {
+        "discount_economy": 625,
+        "economy": 1250,
+        "flexible_economy": 2500,
+        "premium_economy": 2750,
+        "business": 3125,
+        "first": 3750
+      }
+    },
+    {
+      "id": "all_other_5001_plus",
+      "applies_to": "All other flights not matching a specific route table (5001+ mi)",
+      "min_miles": 5001,
+      "max_miles": 99999,
+      "verified": false,
+      "todo": "Verify these values against Qantas calculator",
+      "status_credits": {
+        "discount_economy": 30,
+        "economy": 35,
+        "flexible_economy": 60,
+        "premium_economy": 60,
+        "business": 120,
+        "first": 180
+      },
+      "qantas_points": {
+        "discount_economy": 750,
+        "economy": 1500,
+        "flexible_economy": 3000,
+        "premium_economy": 3300,
+        "business": 3750,
+        "first": 4500
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "last_updated": "2026-02-28",
+  "regions": {
+    "west_coast_usa_canada": {
+      "label": "West Coast USA/Canada",
+      "airports": ["LAX", "SFO", "SEA", "YVR", "LAS", "PHX", "SAN", "PDX", "SJC"]
+    },
+    "east_coast_usa_canada": {
+      "label": "East Coast USA/Canada",
+      "airports": ["JFK", "LGA", "EWR", "BOS", "CLT", "MIA", "FLL", "MCO", "YYZ", "DCA", "IAD", "PHL", "ATL"]
+    },
+    "dallas": {
+      "label": "Dallas",
+      "airports": ["DFW"]
+    },
+    "australia_east_coast": {
+      "label": "Sydney, Melbourne, Brisbane, Gold Coast",
+      "airports": ["SYD", "MEL", "BNE", "OOL"]
+    },
+    "perth": {
+      "label": "Perth",
+      "airports": ["PER"]
+    },
+    "adelaide": {
+      "label": "Adelaide",
+      "airports": ["ADL"]
+    },
+    "cairns": {
+      "label": "Cairns",
+      "airports": ["CNS"]
+    },
+    "darwin": {
+      "label": "Darwin",
+      "airports": ["DRW"]
+    },
+    "new_zealand": {
+      "label": "New Zealand",
+      "airports": ["AKL", "WLG", "CHC", "ZQN"]
+    },
+    "hong_kong": {
+      "label": "Hong Kong",
+      "airports": ["HKG"]
+    },
+    "singapore": {
+      "label": "Singapore",
+      "airports": ["SIN"]
+    },
+    "japan": {
+      "label": "Japan",
+      "airports": ["NRT", "HND", "KIX", "NGO", "FUK"]
+    },
+    "southeast_asia": {
+      "label": "Southeast Asia (Bangkok, Kuala Lumpur, Manila, Jakarta, Ho Chi Minh City)",
+      "airports": ["BKK", "KUL", "MNL", "CGK", "SGN", "HAN"]
+    },
+    "china": {
+      "label": "China (Beijing, Shanghai, Guangzhou)",
+      "airports": ["PEK", "PKX", "PVG", "SHA", "CAN"]
+    },
+    "india_sri_lanka": {
+      "label": "India / Sri Lanka",
+      "airports": ["DEL", "BOM", "MAA", "BLR", "CMB"]
+    },
+    "middle_east": {
+      "label": "Middle East (Doha, Dubai, Muscat)",
+      "airports": ["DOH", "DXB", "MCT", "AUH", "AMM"]
+    },
+    "western_europe": {
+      "label": "Western Europe (London, Paris, Frankfurt, Amsterdam, Rome, Madrid)",
+      "airports": ["LHR", "LGW", "CDG", "FRA", "AMS", "FCO", "MAD", "BCN", "MUC", "ZRH"]
+    },
+    "northern_europe": {
+      "label": "Northern Europe (Helsinki, Stockholm, Copenhagen, Oslo)",
+      "airports": ["HEL", "ARN", "CPH", "OSL"]
+    },
+    "southeast_europe": {
+      "label": "Southeast Europe (Istanbul, Athens, Bucharest)",
+      "airports": ["IST", "ATH", "OTP"]
+    },
+    "south_africa": {
+      "label": "South Africa",
+      "airports": ["JNB", "CPT"]
+    },
+    "south_america": {
+      "label": "South America (Santiago, São Paulo, Buenos Aires, Lima, Bogotá)",
+      "airports": ["SCL", "GRU", "EZE", "LIM", "BOG"]
+    }
+  },
+  "aliases": {
+    "New York": ["JFK", "LGA", "EWR"],
+    "Washington": ["DCA", "IAD"],
+    "Los Angeles": ["LAX"],
+    "San Francisco": ["SFO", "OAK", "SJC"],
+    "London": ["LHR", "LGW", "STN", "LCY"],
+    "Tokyo": ["NRT", "HND"],
+    "Toronto": ["YYZ", "YTZ"],
+    "Paris": ["CDG", "ORY"],
+    "Sydney": ["SYD"],
+    "Melbourne": ["MEL"],
+    "Brisbane": ["BNE"],
+    "Gold Coast": ["OOL"],
+    "Perth": ["PER"],
+    "Adelaide": ["ADL"],
+    "Cairns": ["CNS"],
+    "Darwin": ["DRW"],
+    "Auckland": ["AKL"],
+    "Wellington": ["WLG"],
+    "Christchurch": ["CHC"],
+    "Queenstown": ["ZQN"],
+    "Hong Kong": ["HKG"],
+    "Singapore": ["SIN"],
+    "Bangkok": ["BKK"],
+    "Kuala Lumpur": ["KUL"],
+    "Manila": ["MNL"],
+    "Jakarta": ["CGK"],
+    "Ho Chi Minh City": ["SGN"],
+    "Hanoi": ["HAN"],
+    "Beijing": ["PEK", "PKX"],
+    "Shanghai": ["PVG", "SHA"],
+    "Guangzhou": ["CAN"],
+    "Delhi": ["DEL"],
+    "Mumbai": ["BOM"],
+    "Chennai": ["MAA"],
+    "Bangalore": ["BLR"],
+    "Colombo": ["CMB"],
+    "Doha": ["DOH"],
+    "Dubai": ["DXB"],
+    "Muscat": ["MCT"],
+    "Abu Dhabi": ["AUH"],
+    "Amman": ["AMM"],
+    "Dallas": ["DFW"],
+    "Chicago": ["ORD", "MDW"],
+    "Miami": ["MIA", "FLL"],
+    "Orlando": ["MCO"],
+    "Boston": ["BOS"],
+    "Charlotte": ["CLT"],
+    "Philadelphia": ["PHL"],
+    "Atlanta": ["ATL"],
+    "Seattle": ["SEA"],
+    "Las Vegas": ["LAS"],
+    "Phoenix": ["PHX"],
+    "San Diego": ["SAN"],
+    "Portland": ["PDX"],
+    "Vancouver": ["YVR"],
+    "Frankfurt": ["FRA"],
+    "Amsterdam": ["AMS"],
+    "Rome": ["FCO"],
+    "Madrid": ["MAD"],
+    "Barcelona": ["BCN"],
+    "Munich": ["MUC"],
+    "Zurich": ["ZRH"],
+    "Helsinki": ["HEL"],
+    "Stockholm": ["ARN"],
+    "Copenhagen": ["CPH"],
+    "Oslo": ["OSL"],
+    "Istanbul": ["IST"],
+    "Athens": ["ATH"],
+    "Bucharest": ["OTP"],
+    "Johannesburg": ["JNB"],
+    "Cape Town": ["CPT"],
+    "Santiago": ["SCL"],
+    "Sao Paulo": ["GRU"],
+    "São Paulo": ["GRU"],
+    "Buenos Aires": ["EZE"],
+    "Lima": ["LIM"],
+    "Bogota": ["BOG"],
+    "Bogotá": ["BOG"],
+    "Osaka": ["KIX"],
+    "Nagoya": ["NGO"],
+    "Fukuoka": ["FUK"]
+  }
+}
